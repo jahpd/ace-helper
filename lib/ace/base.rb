@@ -1,5 +1,6 @@
 module Ace
   module Helper
+    module Base
 
      MODE = :coffee
      THEME = :monokai
@@ -64,6 +65,6 @@ module Ace
 # Happy live-coding!
 # (DESTROY ME AND USE EDITOR!)
 # ======================================================================================\n"""
-    end
+   end
   end
 end
