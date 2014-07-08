@@ -1,6 +1,8 @@
 # Ace::Helper
 
-TODO: Write a gem description
+Ace helper add a ace-editor, as well properly javascript to your
+webpage
+(Well, since this is 0.0.1 version, it have some dirty things...)
 
 ## Installation
 
@@ -18,7 +20,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+in your helper.rb file use:
+
+    $ require 'ace/helper'
+
+and use in your own functions:
+
+    include Ace::Helper::Builder
+    
+    def create_ace(src, opt)
+      js = ace(src)
+      content_tag(:div, js, :id => opt[:id])
+    end
+
+in your view files add ace, your mode and theme, as well the code
+
+    <%= javascript_include_tags "ace", "mode-coffee","worker-coffee","theme-monokai" %>
+    <%= create_ace "console.log('Hello World!')", :id => "coffee_editor" %>
+
+in your css files add these parameters:
+
+    #coffee_editor{
+      position: absolute;
+      top: 0%;
+      bottom: 0%;
+      right: 0%;
+      left: 0%;
+    }
 
 ## Contributing
 
